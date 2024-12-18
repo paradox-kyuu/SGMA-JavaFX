@@ -13,4 +13,8 @@ public class Main extends Application {
     public void start(Stage primaryStage) {
 
     }
+    public void displayHome(){
+        System.out.println("Welcome to SGMA JavaFX");
+    }
+
 }
