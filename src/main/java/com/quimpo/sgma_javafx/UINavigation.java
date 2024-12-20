@@ -33,14 +33,14 @@ public class UINavigation {
         Button settingsBtn = new Button("Settings");
         settingsBtn.setOnAction(e -> StageManager.displaySettings());
 
-        Button exitBtn = new Button("Exit");
-        exitBtn.setOnAction(e -> UIUtils.showExitConfirmation());
+        Button logoutBtn = new Button("Logout");
+        logoutBtn.setOnAction(e -> AuthUtils.showLogoutConfirmation());
 
         HBox leftNavBox = new HBox(studentMngBtn, courseMngBtn, subjectMngBtn, gradeMngBtn, dataAnalysisBtn);
         leftNavBox.setAlignment(Pos.CENTER_LEFT);
         leftNavBox.setSpacing(2);
 
-        HBox rightNavBox = new HBox(aboutBtn, settingsBtn, exitBtn);
+        HBox rightNavBox = new HBox(aboutBtn, settingsBtn, logoutBtn);
         rightNavBox.setAlignment(Pos.CENTER_RIGHT);
         rightNavBox.setSpacing(2);
 

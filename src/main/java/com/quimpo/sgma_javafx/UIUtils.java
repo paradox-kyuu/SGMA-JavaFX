@@ -1,16 +1,33 @@
 package com.quimpo.sgma_javafx;
 
 import javafx.application.Platform;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
+import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
+import javafx.stage.Stage;
 
 import java.util.Optional;
 
 public class UIUtils {
+
+    // Creates buttons for adding, editing, viewing, and deleting students
+    public static HBox createStudentButtons(Stage primaryStage) {
+        Button addButton = new Button("Add Student");
+        Button viewButton = new Button("View Classes");
+
+
+        ManageStudents manageStudents = new ManageStudents(primaryStage);
+
+        HBox buttonBox = new HBox(addButton, viewButton);
+        buttonBox.setAlignment(Pos.CENTER_LEFT);
+        buttonBox.setSpacing(5);
+        buttonBox.setPadding(new Insets(30, 0 ,30 ,10));
+
+        return buttonBox;
+    }
 
     public static void showExitConfirmation() {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -34,4 +51,5 @@ public class UIUtils {
             }
         }
     }
+
 }
